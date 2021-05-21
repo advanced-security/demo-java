@@ -157,52 +157,45 @@ Click `show paths` in order to see the dataflow path that resulted in this alert
   
 <summary>Fix the Security Alert</summary>
 
-TBD<br/>
-<!--
-In order to fix this specific alert, we will need to ensure that the destination file paths is the only location where files can be written to.
+In order to fix this specific alert, we will need to ensure parameters used in the SQL query is validated and sanitized.
 
-Click on the `Code` tab and [Edit](https://docs.github.com/en/free-pro-team@latest/github/managing-files-in-a-repository/editing-files-in-your-repository) the `index.js` file. Navigate to Line 264 of the `index.js` file and modify the line:
+Click on the `Code` tab and [Edit](https://docs.github.com/en/free-pro-team@latest/github/managing-files-in-a-repository/editing-files-in-your-repository) the file [`IndexController.java` in the `Controllers` folder](./src/main/java/com/github/hackathon/advancedsecurityjava/Controllers/IndexController.java), replace the content with the file [`fixme`](./fixme).
 
-`var srcpath = path.resolve(cwd, header.linkname)`
+<img src="images/11-fix-source-code.png" width="80%"/>
 
-to
-
-`var srcpath = path.join(cwd, path.join('/', header.linkname))`
-
-Click `Create a new branch for this commit and start a pull request`, name the branch `fix-zip-slip`, and create the Pull Request.
+Click `Create a new branch for this commit and start a pull request`, name the branch `fix-sql-injection`, and create the Pull Request.
 
 #### Pull Request Status Check
 
 In the Pull Request, you will notice that the CodeQL Analysis has started as a status check. Wait until it completes.
 
-<img src="https://user-images.githubusercontent.com/6920330/96752215-2adec300-139c-11eb-9c5e-3a04f24ba0bf.png" width="80%"/>
+<img src="images/12-fix-pr-in-progress.png" width="80%"/>
 
 #### Security Alert Details
 
 After the Workflow has completed click on `Details` by the `Code Scanning Results / CodeQL` status check. 
 
-<img src="https://user-images.githubusercontent.com/6920330/96752487-85781f00-139c-11eb-943d-602f2de98998.png" width="80%"/>
+<img src="images/13-fix-pr-done.png" width="80%"/>
 
 #### Fixed Alert
 
-Notice that Code Scanning has detected that this Pull Request will fix the Zip Slip vulnerability that was detected before.
+Notice that Code Scanning has detected that this Pull Request will fix the SQL injection vulnerability that was detected before.
 
-<img src="https://user-images.githubusercontent.com/6920330/96752486-85781f00-139c-11eb-9a7e-3ccbc81da3d1.png" width="80%"/>
+<img src="images/14-fix-detail.png" width="80%"/>
 
 Merge the Pull Request. After the Pull Request has been merged, another Workflow will kick off to scan the repository for any vulnerabilties. 
 
 #### Closed Security Alerts
 
-After the final Workflow has completed, navigate back to the `Security` tab and click `Closed`. Notice that the Zip Slip security alert now shows up as a closed issue.
+After the final Workflow has completed, navigate back to the `Security` tab and click `Closed`. Notice that the **Query built from user-controlled sources** security alert now shows up as a closed issue.
 
-<img src="https://user-images.githubusercontent.com/6920330/96753441-e0f6dc80-139d-11eb-9a2a-d53075b6331e.png" width="80%"/>
+<img src="images/15-fixed-alert.png" width="80%"/>
 
 #### Traceability
 
 Click on the security alert and notice that it details when the fix was made, by whom, and the specific commit. This provides full traceability to detail when and how a security alert was fixed and exactly what was changed to remediate the issue.
 
-<img src="https://user-images.githubusercontent.com/6920330/96753440-e05e4600-139d-11eb-81ed-c22e4f41d74a.png" width="80%"/>
--->
+<img src="images/16-fix-history.png" width="80%"/>
 
 </p>
 </details>
