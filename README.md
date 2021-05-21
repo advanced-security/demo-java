@@ -161,7 +161,7 @@ In order to fix this specific alert, we will need to ensure parameters used in t
 
 Click on the `Code` tab and [Edit](https://docs.github.com/en/free-pro-team@latest/github/managing-files-in-a-repository/editing-files-in-your-repository) the file [`IndexController.java`](./src/main/java/com/github/hackathon/advancedsecurityjava/Controllers/IndexController.java) in the `Controllers` folder, replace the content with the file [`fixme`](./fixme).
 
-<img src="images/11-fix-source-code.png" width="80%"/>
+<img src="images/11-fix-source-code.png" width="30%"/>
 
 Click `Create a new branch for this commit and start a pull request`, name the branch `fix-sql-injection`, and create the Pull Request.
 
