@@ -159,7 +159,7 @@ Click `show paths` in order to see the dataflow path that resulted in this alert
 
 In order to fix this specific alert, we will need to ensure parameters used in the SQL query is validated and sanitized.
 
-Click on the `Code` tab and [Edit](https://docs.github.com/en/free-pro-team@latest/github/managing-files-in-a-repository/editing-files-in-your-repository) the file [`IndexController.java` in the `Controllers` folder](./src/main/java/com/github/hackathon/advancedsecurityjava/Controllers/IndexController.java), replace the content with the file [`fixme`](./fixme).
+Click on the `Code` tab and [Edit](https://docs.github.com/en/free-pro-team@latest/github/managing-files-in-a-repository/editing-files-in-your-repository) the file [`IndexController.java`](./src/main/java/com/github/hackathon/advancedsecurityjava/Controllers/IndexController.java) in the `Controllers` folder, replace the content with the file [`fixme`](./fixme).
 
 <img src="images/11-fix-source-code.png" width="80%"/>
 
