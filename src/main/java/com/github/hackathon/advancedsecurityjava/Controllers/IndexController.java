@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Query;
+import javax.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,8 +35,11 @@ public class IndexController {
     try {
       // Init connection to DB
       connection = DriverManager.getConnection(Application.connectionString);
+      
 
       statement = connection.createStatement();
+      EntityManager entitymanager = statement.createEntityManager();
+    
       String query = null;
       Query q = null;
 
