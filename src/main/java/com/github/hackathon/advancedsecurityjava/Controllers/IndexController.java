@@ -6,9 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Query;
-import javax.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 import com.github.hackathon.advancedsecurityjava.Application;
 import com.github.hackathon.advancedsecurityjava.Models.Book;
@@ -36,9 +37,8 @@ public class IndexController {
       // Init connection to DB
       connection = DriverManager.getConnection(Application.connectionString);
       
-
       statement = connection.createStatement();
-      EntityManager entitymanager = statement.createEntityManager();
+      
     
       String query = null;
       Query q = null;
@@ -46,23 +46,23 @@ public class IndexController {
       if (bookname != null) {
         // Filter by book name
         query = "SELECT * FROM Books WHERE name LIKE '%:value%'";
-        q = entityManager.createQuery(query);
+        q = statement.createQuery(query);
         q.setParameter("value", bookname);
       } else if (bookauthor != null) {
         // Filter by book author
         query = "SELECT * FROM Books WHERE author LIKE '%:value%'";
-        q = entityManager.createQuery(query);
+        q = statement.createQuery(query);
         q.setParameter("value", bookauthor);
       } else if (bookread != null) {
         // Filter by if the book has been read or not
         Integer read = bookread ? 1 : 0;
         query = "SELECT * FROM Books WHERE read = :value";
-        q = entityManager.createQuery(query);
+        q = statement.createQuery(query);
         q.setParameter("value", bookread);
       } else {
         // All books
         query = "SELECT * FROM Books";
-        q = entityManager.createQuery(query);
+        q = statement.createQuery(query);
       }
 
       ResultSet results = statement.executeQuery(query);
