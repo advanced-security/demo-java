@@ -36,7 +36,7 @@ public class IndexController {
 
       statement = connection.createStatement();
       String query = null;
-      Query q = null
+      Query q = null;
 
       if (bookname != null) {
         // Filter by book name
