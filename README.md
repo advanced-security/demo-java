@@ -13,20 +13,19 @@ This tutorial with use CodeQL Analysis with Code Scanning in order to search for
 ## Instructions
 
 <details>
-<summary>Create repository using the template</summary>
+<summary>Create repository fork</summary>
 <p> 
   
-Begin by [creating a new repository from this template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+Begin by [creating a new repository from a fork (public)](https://docs.github.com/en/get-started/quickstart/fork-a-repo) or [cloning the repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
 <img src="images/00-repo-fork.png" width="70%"/>
 
-Where creating the template repository make sure to do the following:
+Where creating the forked repository, make sure to 
 
-1. Create a name for your demo
-2. Select `Include all branches`
-3. Create the repository from the template
-
-<img src="images/00-repo-template.png" width="70%"/>
+1. Select the correct org / user account
+2. Create a name for your new repository
+3. Disable main branch only cloning
+4. Create the repository from the template
 
 </p>
 </details>
