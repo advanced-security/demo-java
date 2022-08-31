@@ -229,12 +229,10 @@ Make sure that the base branch is set to your own repositories `main` branch ver
 
 Once the Pull Request has been created, you will notice that the CodeQL Analysis has started as a status check. Wait until it completes.
 
-<img src="images/18-pr-in-progress.png" width="80%"/>
-
 After the Workflow has completed, the `Code Scanning Results / CodeQL` status check will have failed.
 Notice that Code Scanning has detected that this Pull Request introduces a new security alert.
 
-<img src="images/19-pr-check-failed.png" width="80%"/>
+<img src="images/18-pr-check-failed.png" width="80%"/>
 
 
 #### Alert Centric Notifications
@@ -242,18 +240,18 @@ Notice that Code Scanning has detected that this Pull Request introduces a new s
 Directly in the Pull Request, you will notice that GitHub Code Scanning bot has left a review of the Pull Request with the security alert details.
 This will help developers to quickly identify security issues introduced in their Pull Requests.
 
-<img src="images/20-pr-review.png" width="80%"/>
+<img src="images/19-pr-review.png" width="80%"/>
 
 
 This also allows for collaboration between developers and security teams to discuss the security alert and how to remediate it.
 
-<img src="images/21-pr-review-collaboration.png" width="80%"/>
+<img src="images/20-pr-review-collaboration.png" width="80%"/>
 
 #### Security Alert Details
 
 Click on `Show more details` by the new `Code Scanning Alert` to jump to the `Security` tab and view the security alert details.
 
-<img src="images/22-pr-show-more-details.png" width="80%"/>
+<img src="images/21-pr-show-more-details.png" width="80%"/>
 
 Notice that the security alert was found `In pull request` and not in the `main` branch (production).
 
