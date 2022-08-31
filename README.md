@@ -209,7 +209,59 @@ Click on the security alert and notice that it details when the fix was made, by
 
 </p>
 </details>
-  
+
+<details>
+<summary>Prevent new Alerts in a Pull Request</summary>
+<p>
+
+#### Create Pull Request from new feature Branch
+
+Now that we have setup CodeQL Analysis and have fix a security alert, we can try to introduce an alert into a Pull Request.
+
+Create a new Pull Request with the base branch as your `main` branch and the compare branch as the `new-feature` branch.
+
+<img src="images/17-create-pull-request.png" width="70%"/>
+
+Make sure that the base branch is set to your own repositories `main` branch versus the original repository's `main` branch.
+
+
+#### Pull Request Status Check
+
+Once the Pull Request has been created, you will notice that the CodeQL Analysis has started as a status check. Wait until it completes.
+
+<img src="images/18-pr-in-progress.png" width="80%"/>
+
+After the Workflow has completed, the `Code Scanning Results / CodeQL` status check will have failed.
+Notice that Code Scanning has detected that this Pull Request introduces a new security alert.
+
+<img src="images/19-pr-check-failed.png" width="80%"/>
+
+
+#### Alert Centric Notifications
+
+Directly in the Pull Request, you will notice that GitHub Code Scanning bot has left a review of the Pull Request with the security alert details.
+This will help developers to quickly identify security issues introduced in their Pull Requests.
+
+<img src="images/20-pr-review.png" width="80%"/>
+
+
+This also allows for collaboration between developers and security teams to discuss the security alert and how to remediate it.
+
+<img src="images/21-pr-review-collaboration.png" width="80%"/>
+
+#### Security Alert Details
+
+Click on `Show more details` by the new `Code Scanning Alert` to jump to the `Security` tab and view the security alert details.
+
+<img src="images/22-pr-show-more-details.png" width="80%"/>
+
+Notice that the security alert was found `In pull request` and not in the `main` branch (production).
+
+
+</p>
+</details>
+
+
 ## Next Steps
 
 Ready to talk about advanced security features for GitHub Enterprise? [Contact Sales](https://enterprise.github.com/contact) for more information!
