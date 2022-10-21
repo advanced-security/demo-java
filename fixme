@@ -26,8 +26,8 @@ public class IndexController {
   public List<Book> getBooks(@RequestParam(name = "name", required = false) String bookname,
       @RequestParam(name = "author", required = false) String bookauthor,
       @RequestParam(name = "read", required = false) Boolean bookread) {
+    
     List<Book> books = new ArrayList<Book>();
-
     PreparedStatement statement = null;
     List<String> parameters = new ArrayList<>();
 
@@ -66,7 +66,6 @@ public class IndexController {
 
       while (results.next()) {
         Book book = new Book(results.getString("name"), results.getString("author"), (results.getInt("read") == 1));
-
         books.add(book);
       }
 
