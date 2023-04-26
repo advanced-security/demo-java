@@ -21,13 +21,14 @@ public class IndexController {
 
   private static Connection connection;
 
+
   @GetMapping("/")
   @ResponseBody
   public List<Book> getBooks(@RequestParam(name = "name", required = false) String bookname,
       @RequestParam(name = "author", required = false) String bookauthor,
       @RequestParam(name = "read", required = false) Boolean bookread) {
     List<Book> books = new ArrayList<Book>();
-
+    //comentario de prueba
     Statement statement = null;
 
     try {
