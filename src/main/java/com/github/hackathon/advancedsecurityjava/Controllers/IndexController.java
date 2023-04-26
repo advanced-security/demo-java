@@ -87,27 +87,3 @@ public class IndexController {
     return books;
   }
 }
-
-      while (results.next()) {
-        Book book = new Book(results.getString("name"), results.getString("author"), (results.getInt("read") == 1));
-
-        books.add(book);
-      }
-
-    } catch (SQLException error) {
-      error.printStackTrace();
-    } finally {
-      try {
-        if (connection != null) {
-          connection.close();
-        }
-        if (statement != null) {
-          statement.close();
-        }
-      } catch (SQLException error) {
-        error.printStackTrace();
-      }
-    }
-    return books;
-  }
-}
