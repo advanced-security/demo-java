@@ -2,10 +2,9 @@ package com.github.hackathon.advancedsecurityjava.Controllers;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,35 +29,38 @@ public class IndexController {
     List<Book> books = new ArrayList<Book>();
 
     PreparedStatement statement = null;
+    List<String> parameters = new ArrayList<>();
 
     try {
       // Init connection to DB
       connection = DriverManager.getConnection(Application.connectionString);
+
       String query = null;
 
       if (bookname != null) {
         // Filter by book name
-        query = "SELECT * FROM Books WHERE name LIKE %?%";
-        statement = connection.prepareStatement(query);
-        statement.setString(1, bookname);
+        query = "SELECT * FROM Books WHERE name LIKE ?";
+        parameters.add("%" + bookname + "%");
       } else if (bookauthor != null) {
         // Filter by book author
-        query = "SELECT * FROM Books WHERE author LIKE %?%";
-        statement = connection.prepareStatement(query);
-        statement.setString(1, bookauthor);
+        query = "SELECT * FROM Books WHERE author LIKE ?";
+        parameters.add("%" + bookauthor + "%");
       } else if (bookread != null) {
         // Filter by if the book has been read or not
         Integer read = bookread ? 1 : 0;
         query = "SELECT * FROM Books WHERE read = ?";
-        statement = connection.prepareStatement(query);
-        statement.setInt(1, read);
+        parameters.add(read.toString());
       } else {
         // All books
         query = "SELECT * FROM Books";
-        statement = connection.prepareStatement(query);
       }
 
-     
+      statement = connection.prepareStatement(query);
+      int index = 1;
+      for (String parameter : parameters) {
+        statement.setString(index, parameter);
+        index += 1;
+      }
 
       ResultSet results = statement.executeQuery();
 
