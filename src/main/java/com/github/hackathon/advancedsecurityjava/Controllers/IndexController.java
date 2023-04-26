@@ -51,7 +51,7 @@ public class IndexController {
         Integer read = bookread ? 1 : 0;
         query = "SELECT * FROM Books WHERE read = ?";
         statement = connection.prepareStatement(query);
-        statement.setString(1, bookread);
+        statement.setString(1, read);
       } else {
         // All books
         query = "SELECT * FROM Books";
