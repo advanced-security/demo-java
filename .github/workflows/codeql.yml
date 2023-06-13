@@ -75,3 +75,8 @@ jobs:
       uses: github/codeql-action/analyze@v2
       with:
         category: "/language:${{matrix.language}}"
+        
+    - name: Generate Security Report
+      uses: peter-murray/github-security-report-action@v2
+      with:
+         token: "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"
