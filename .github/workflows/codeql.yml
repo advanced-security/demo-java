@@ -12,14 +12,11 @@
 name: "CodeQL"
 
 on:
-  push:
-    branches: [ "main" ]
+  
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ "main" ]
-  schedule:
-    - cron: '15 18 * * 1'
-
+  
 jobs:
   analyze:
     name: Analyze
@@ -76,7 +73,4 @@ jobs:
       with:
         category: "/language:${{matrix.language}}"
         
-    - name: Generate Security Report
-      uses: peter-murray/github-security-report-action@v2
-      with:
-         token: "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"
+   
