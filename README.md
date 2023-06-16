@@ -1,4 +1,4 @@
-# Code Scanning Java Tutorial
+# Code Scanning Java Tutorial POC
 
 Welcome to the Code Scanning Java Tutorial! This tutorial will take you through how to set up Github Advanced Security: Code Scanning as well as interpret results that it may find. The following repository contains SQL injection vulnerability for demonstration purpose.
 
